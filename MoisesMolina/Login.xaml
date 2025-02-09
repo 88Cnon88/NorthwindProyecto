@@ -1,0 +1,82 @@
+﻿<Window x:Name="window" x:Class="MoisesMolina.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        Height="568" Width="856"
+        Background="Transparent" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Border para redondear los bordes de la ventana -->
+    <Border Background="#FF242424" CornerRadius="20" BorderThickness="2" BorderBrush="#5DB85B">
+        <StackPanel>
+            <Grid Height="40" Width="70" HorizontalAlignment="Right" Margin="0,0,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="Minimice">
+                    <Image Width="20" Height="20" Source="/Media/Minimice_btn.png"></Image>
+                </Button>
+                <Button Grid.Column="1" Click="Close">
+                    <Image Width="20" Height="20" Source="/Media/Close_btn.png"></Image>
+                </Button>
+            </Grid>
+            <Grid Height="564" Width="852">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="205"/>
+                    <RowDefinition Height="Auto" MinHeight="88.45"/>
+                    <RowDefinition Height="Auto" MinHeight="108.36"/>
+                    <RowDefinition Height="Auto" MinHeight="82.36"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="NORTHWIND" 
+                    Style="{StaticResource TitleStyle}" 
+                    Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    Margin="0,50,0,20" Width="408"/>
+                <Image Grid.Row="0" Grid.Column="2" Source="/Media/bd 1.png" Margin="16,-11,81,17"/>
+
+                <TextBlock Text="Usuario" 
+                    Style="{StaticResource CustomText}" 
+                    Grid.Row="1" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="60,10,0,5" Width="65"/>
+
+                <TextBox x:Name="UserText" Grid.Row="1" Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Margin="60,0,54,0" Height="30" 
+                    Background="{Binding Background, ElementName=window}" Foreground="White" BorderThickness="0,0,0,1"
+                    Padding="5" BorderBrush="#FF777777"/>
+
+                <TextBlock Text="Contraseña" 
+                    Style="{StaticResource CustomText}" 
+                    Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="60,10,0,5" Width="99"/>
+
+                <PasswordBox x:Name="PassText" Grid.Row="2" Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Margin="60,0,54,0" Height="30" 
+                    Background="{Binding Background, ElementName=window}" Foreground="White"
+                    BorderBrush="#FF777777" BorderThickness="0,0,0,2"
+                    Padding="5"/>
+
+                <Button Content="Entrar" 
+                    Grid.Row="3" Grid.Column="1"
+                    Width="150"
+                    Height="35" 
+                    Foreground="#FF242424"
+                    Click="Entrar_Click"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
+

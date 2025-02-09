@@ -1,0 +1,110 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Window">
+        <Setter Property="Width" Value="856"/>
+        <Setter Property="Height" Value="568"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <!-- Hacemos transparente el fondo para mostrar el redondeo -->
+        <Setter Property="WindowStyle" Value="None"/>
+        <!-- Elimina la barra de título -->
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <!-- Permite bordes redondeados -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+                    <Border Background="#242424" CornerRadius="20" BorderBrush="#5DB85B" BorderThickness="2">
+                        <Grid>
+                            <AdornerDecorator>
+                                <ContentPresenter/>
+                            </AdornerDecorator>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="TitleStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="64"/>
+        <Setter Property="Foreground" Value="#5DB85B"/>
+        <Setter Property="LineHeight" Value="77.45"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="10" Color="#5DB85B"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CustomText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="LineHeight" Value="19.36"/>
+        <Setter Property="Foreground" Value="#5DB85B"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#242424"/>
+        <Setter Property="Background" Value="#5DB85B"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="10" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" 
+                                      RecognizesAccessKey="True"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="LineHeight" Value="19.36"/>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="#242424"/>
+        <!-- Fondo oscuro para la cabecera -->
+        <Setter Property="Foreground" Value="#5DB85B"/>
+        <!-- Texto blanco en la cabecera -->
+        <Setter Property="Height" Value="40"/>
+        <!-- Ajustar la altura de la cabecera -->
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="DataGridCell">
+        <Setter Property="Background" Value="#3C3C3C"/>
+        <!-- Fondo gris oscuro para las celdas -->
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Texto blanco en las celdas -->
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <!-- Centrar el texto en las celdas -->
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <!-- Bordes gris para las celdas -->
+        <Setter Property="BorderThickness" Value="1"/>
+        <!-- Grosor de los bordes de las celdas -->
+    </Style>
+
+</ResourceDictionary>
