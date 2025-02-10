@@ -17,33 +17,33 @@ using MoisesMolina.Frames;
 
 namespace MoisesMolina.Frames
 {
-    /// <summary>
-    /// Lógica de interacción para Agregar.xaml
-    /// </summary>
+    
+    /// Lógica donde se interactua para Agregar.xaml
+    
     public partial class Agregar : Page
     {
         public Agregar()
         {
             InitializeComponent();
-            CargarProductos();  // Cargar los productos
-            CargarCategorias(); // Cargar las categorías
+            CargarProductos();  // Carga los productos
+            CargarCategorias(); // Carga las categorías
         }
 
         private void CargarProductos()
         {
-            // Obtener los productos desde la base de datos
+            // Obtengo los productos desde la base de datos
             List<DBase.Producto> productos = DBase.ObtenerProductos();
 
-            // Enlazar los productos al DataGrid
+            // Enlazo los productos al DataGrid
             ProductosDataGrid.ItemsSource = productos;
         }
 
         private void CargarCategorias()
         {
-            // Obtener las categorías desde la base de datos
+            // Obtengo las categorias
             List<string> categorias = DBase.ObtenerCategorias();
 
-            // Asignar las categorías al ComboBox
+            // Asigno al ComboBox
             CategoryComboBox.ItemsSource = categorias;
         }
 
@@ -52,20 +52,20 @@ namespace MoisesMolina.Frames
             string productName = ProductNameText.Text;
             string category = CategoryComboBox.SelectedItem.ToString(); 
 
-            // Verifica que ambos campos tengan valores
+            // Verifico
             if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(category))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
             }
 
-            // Realiza el Insert en la base de datos
+            // Realizo insert
             bool exito = DBase.AgregarProducto(productName, category);
 
             if (exito)
             {
                 MessageBox.Show("Producto agregado exitosamente.");
-                // Opcional: Actualiza la DataGrid con los nuevos datos
+                // Actualizo
                 ProductosDataGrid.ItemsSource = DBase.ObtenerProductos();
             }
             else

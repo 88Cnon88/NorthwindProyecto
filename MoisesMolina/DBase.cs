@@ -8,13 +8,11 @@ namespace MoisesMolina
 {
     public static class DBase
     {
-        // Cadena de conexión (se recomienda tenerla en un archivo de configuración)
+        // Esta es l cadena de conexión, cuidado con la contraseña
         private static readonly string connectionString =
             "server=localhost;port=3306;user id=root;password=root;database=northwind";
 
-        /// <summary>
-        /// Realiza el login del usuario verificando si existe en la base de datos.
-        /// </summary>
+        
         public static bool Login(string usuario, string contrasena)
         {
             try
@@ -39,9 +37,9 @@ namespace MoisesMolina
             }
         }
 
-        /// <summary>
-        /// Obtiene la lista de productos con su nombre y categoría.
-        /// </summary>
+        
+        /// Obtengo la lista de productos con su nombre y su categoría.
+        
         public static List<Producto> ObtenerProductos()
         {
             List<Producto> productos = new List<Producto>();
@@ -77,9 +75,9 @@ namespace MoisesMolina
             return productos;
         }
 
-        /// <summary>
-        /// Obtiene la lista de categorías.
-        /// </summary>
+        
+        /// Obtengo aqui la lista de categorías.
+        
         public static List<string> ObtenerCategorias()
         {
             List<string> categorias = new List<string>();
@@ -108,9 +106,9 @@ namespace MoisesMolina
             return categorias;
         }
 
-        /// <summary>
-        /// Agrega un producto nuevo a la base de datos.
-        /// </summary>
+        
+        /// Agrego un producto nuevo a la base de datos.
+        
         public static bool AgregarProducto(string productName, string category)
         {
             try
@@ -139,9 +137,9 @@ namespace MoisesMolina
             }
         }
 
-        /// <summary>
-        /// Modifica los datos de un producto existente.
-        /// </summary>
+        
+        /// Modifico los datos de un producto existente.
+        
         public static bool ModificarProducto(string oldProductName, string newProductName, string newCategory)
         {
             try
@@ -149,7 +147,7 @@ namespace MoisesMolina
                 using (MySqlConnection conexion = new MySqlConnection(connectionString))
                 {
                     conexion.Open();
-                    // Obtener CategoryID de la nueva categoría
+                    // Obtengo CategoryID de la nueva categoría
                     string queryCategoria = "SELECT CategoryID FROM categories WHERE CategoryName = @newCategory";
                     int newCategoryId;
                     using (MySqlCommand cmdCategoria = new MySqlCommand(queryCategoria, conexion))
@@ -164,7 +162,7 @@ namespace MoisesMolina
                         newCategoryId = Convert.ToInt32(result);
                     }
 
-                    // Actualizar el producto
+                    // Actualizo el producto
                     string updateQuery = "UPDATE products SET ProductName = @newProductName, CategoryID = @newCategoryId WHERE ProductName = @oldProductName";
                     using (MySqlCommand cmdUpdate = new MySqlCommand(updateQuery, conexion))
                     {

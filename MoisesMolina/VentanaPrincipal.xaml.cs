@@ -18,9 +18,7 @@ using System.Windows.Shapes;
 
 namespace MoisesMolina
 {
-    /// <summary>
-    /// Lógica de interacción para VentanaPrincipal.xaml
-    /// </summary>
+    
     public partial class VentanaPrincipal : Window
     {
         public VentanaPrincipal()
@@ -29,19 +27,19 @@ namespace MoisesMolina
         }
         private void CambioPaginaInicio(object sender, RoutedEventArgs e)
         {
-            // Cambiar el contenido del Frame a la página "Inicio.xaml"
-            miFrame.Content = new Inicio();  // 'miFrame' es el nombre de tu Frame
+            
+            miFrame.Content = new Inicio();  
         }
 
         private void CambioPaginaAgregar(object sender, RoutedEventArgs e)
         {
-            // Cambiar el contenido del Frame a la página "Agregar.xaml"
-            miFrame.Content = new Agregar();  // 'miFrame' es el nombre de tu Frame
+            
+            miFrame.Content = new Agregar();  
         }
         private void CambioPaginaModificar(object sender, RoutedEventArgs e)
         {
-            // Cambiar el contenido del Frame a la página "Agregar.xaml"
-            miFrame.Content = new Modificar();  // 'miFrame' es el nombre de tu Frame
+            
+            miFrame.Content = new Modificar();  
         }
         private void CambioPaginaBorrar(object sender, RoutedEventArgs e)
         {
@@ -62,9 +60,9 @@ namespace MoisesMolina
         private void VolverLogin(object sender, RoutedEventArgs e)
         {
             {
-                Login login = new Login(); // Asegúrate de tener esta ventana creada
+                Login login = new Login(); 
                 login.Show();
-                this.Close(); // Cierra la ventana actual
+                this.Close(); 
             }
         }
 

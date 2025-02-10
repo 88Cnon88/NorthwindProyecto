@@ -11,7 +11,8 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
 
-    <Border Background="#FF242424" CornerRadius="20" BorderThickness="2" BorderBrush="#5DB85B">
+    <Border Background="#FF242424" CornerRadius="20">
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="231*"></ColumnDefinition>
@@ -91,3 +92,4 @@
         </Grid>
     </Border>
 </Window>
+

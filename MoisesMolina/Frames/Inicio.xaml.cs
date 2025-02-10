@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace MoisesMolina.Frames
 {
-    /// <summary>
-    /// Lógica de interacción para Inicio.xaml
-    /// </summary>
+    
     public partial class Inicio : Page
     {
         public Inicio()

@@ -16,9 +16,9 @@ using static MoisesMolina.DBase;
 
 namespace MoisesMolina.Frames
 {
-    /// <summary>
-    /// Lógica de interacción para Borrar.xaml
-    /// </summary>
+    
+    /// Lógica de borrar
+    
     public partial class Borrar : Page
     {
         public Borrar()
@@ -63,8 +63,8 @@ namespace MoisesMolina.Frames
                 if (eliminado)
                 {
                     MessageBox.Show("Producto eliminado exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-                    CargarProductos();  // Actualizar la lista en el DataGrid
-                    OldProduct.Clear(); // Limpiar el campo de texto
+                    CargarProductos();  // Actualizo por aqui la lista en el DataGrid
+                    OldProduct.Clear(); // Limpio
                 }
                 else
                 {
